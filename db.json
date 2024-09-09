@@ -1,0 +1,64 @@
+{
+  "testResults": [
+    {
+      "id": "3f8e",
+      "userId": "useruser",
+      "nickname": "ㅋㅋㅋㅋ",
+      "result": "INFP",
+      "answers": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "date": "2024-09-09T16:59:12.941Z",
+      "visibility": true
+    },
+    {
+      "id": "3645",
+      "userId": "asdf",
+      "nickname": "리액트5기다녀감",
+      "result": "INFP",
+      "answers": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "date": "2024-09-09T16:59:29.845Z",
+      "visibility": false
+    }
+  ]
+}

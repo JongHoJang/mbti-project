@@ -36,7 +36,7 @@ const Router = () => {
           />
 
           <Route
-            path="/result"
+            path="/results"
             element={
               <ProtectedRoute>
                 <Result />
