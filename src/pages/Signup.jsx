@@ -28,9 +28,9 @@ const Signup = () => {
     console.log(data);
     if (data.success) {
       alert(data.message);
-      navigate('/');
+      navigate('/login');
     } else {
-      alert('아이디가 중복');
+      alert('이미 사용 중인 아이디입니다. 다른 아이디를 선택해 주세요.');
       setUserData({
         id: '',
         password: '',
@@ -40,17 +40,50 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <h2>회원가입</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={userData.id} placeholder="아이디" onChange={handleIdChange} />
-        <input type="password" value={userData.password} placeholder="비밀번호" onChange={handlePasswordChange} />
-        <input type="text" value={userData.nickname} placeholder="닉네임" onChange={handleNicknameChange} />
-        <button type="submit">회원가입</button>
-      </form>
-      <span>
-        이미 다른 계정이 있으신가요? <Link to="/login">로그인</Link>
-      </span>
+    <div className="flex items-center justify-center mt-50">
+      <div className="w-[400px] h-[450px] bg-white rounded-lg shadow-md">
+        <h2 className="text-2xl font-bold text-center my-30">회원가입</h2>
+
+        <div className="mx-20 bg-slate-50 rounded-lg shadow-md p-20">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <input
+              type="text"
+              value={userData.id}
+              placeholder="아이디"
+              onChange={handleIdChange}
+              className="text-14 pl-12 border h-40 mt-20 mb-10 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="password"
+              value={userData.password}
+              placeholder="비밀번호"
+              onChange={handlePasswordChange}
+              className="text-14 pl-12 border h-40 mb-10 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="text"
+              value={userData.nickname}
+              placeholder="닉네임"
+              onChange={handleNicknameChange}
+              className="text-14 pl-12 border h-40 mb-10 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <button
+              type="submit"
+              className=" h-40 mb-10 bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition-colors"
+            >
+              회원가입
+            </button>
+          </form>
+          <div className="text-center mt-4 text-12">
+            <span>
+              이미 다른 계정이 있으신가요?{' '}
+              <Link to="/login" className="text-blue-500 hover:underline">
+                로그인
+              </Link>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

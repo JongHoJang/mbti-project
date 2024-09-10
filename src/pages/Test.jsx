@@ -25,7 +25,7 @@ const Test = () => {
 
   return (
     <div className="max-w-md mx-auto mt-10">
-      <h1 className="w-[500px] text-3xl font-bold text-primary-color my-40 text-center">MBTI 테스트</h1>
+      <h1 className="text-3xl font-bold text-primary-color my-40 text-center">MBTI 테스트</h1>
       <TestForm onSubmit={handleTestSubmit} />
     </div>
   );

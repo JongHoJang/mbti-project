@@ -5,7 +5,7 @@ const TestResultList = ({ results, onUpdate, onDelete }) => {
   const { user } = useUserStore((state) => state);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-20 mb-60">
       {results
         ?.filter((result) => result.visibility || result.userId === user.userId)
         .map((result) => (

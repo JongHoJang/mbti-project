@@ -1,7 +1,7 @@
 import { deleteTestResult, updateTestResultVisibility } from '../api/testResults';
 import useUserStore from '../zustand/useUserStore';
 
-const mbtiDescriptions = {
+export const mbtiDescriptions = {
   ISTJ: '책임감 있고 신뢰할 수 있으며, 전통적이고 실용적인 사고방식을 가지고 있습니다.',
   ISFJ: '헌신적이고 따뜻하며, 사람들의 필요를 잘 이해하고 도와줍니다.',
   INFJ: '이상적이며 통찰력이 뛰어나고, 사람들과의 깊은 관계를 중요시합니다.',
@@ -24,8 +24,8 @@ const TestResultItem = ({ result, onUpdate, onDelete }) => {
   const { user } = useUserStore((state) => state);
 
   const isOwner = result.userId === user.userId;
-  console.log('result:', result);
-  console.log('user:', user);
+  // console.log('result:', result);
+  // console.log('user:', user);
 
   const formattedDate = new Date(result.date).toLocaleString();
   const mbti = result.result
@@ -57,25 +57,22 @@ const TestResultItem = ({ result, onUpdate, onDelete }) => {
   };
 
   return (
-    <div className="p-6 bg-gray-200 rounded-lg shadow-lg text-white">
-      <div className="flex justify-between items-center border-b border-gray-700 pb-3 mb-3">
+    <div className="p-24 bg-withe shadow-lg rounded-lg text-white">
+      <div className="flex justify-between items-center border-b border-gray-700 pb-12 mb-12">
         <h4 className="text-xl font-semibold text-slate-700">{result.nickname}</h4>
         <p className="text-sm text-slate-700">{formattedDate}</p>
       </div>
-      <p className="text-2xl text-left font-bold text-orange-400 mb-4">{result.result}</p>
+      <p className="text-2xl text-left font-bold text-orange-400 mb-16">{result.result}</p>
       <p className="text-base text-left text-black mb-4">{description}</p>
       {isOwner && (
         <div className="flex justify-end space-x-4">
           <button
             onClick={handleToggleVisibility}
-            className="bg-blue-500 py-2 px-4 rounded-lg text-sm hover:bg-blue-600 transition"
+            className="bg-blue-500 p-8 px-16 rounded text-12 hover:bg-blue-600 transition"
           >
             {result.visibility ? '비공개로 전환' : '공개로 전환'}
           </button>
-          <button
-            onClick={handleDelete}
-            className="bg-red-500 py-2 px-4 rounded-lg text-sm hover:bg-red-600 transition"
-          >
+          <button onClick={handleDelete} className="bg-red-500 p-8 px-16 rounded text-12 hover:bg-red-600 transition">
             삭제
           </button>
         </div>
