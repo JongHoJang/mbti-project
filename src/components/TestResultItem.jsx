@@ -1,4 +1,3 @@
-import React from 'react';
 import { deleteTestResult, updateTestResultVisibility } from '../api/testResults';
 import useUserStore from '../zustand/useUserStore';
 

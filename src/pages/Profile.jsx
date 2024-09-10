@@ -32,18 +32,26 @@ const Profile = () => {
   };
 
   return (
-    <div>
-      <div>
-        <h1>{user.nickname}님의 프로필 수정</h1>
-        <form onSubmit={handleSubmit}>
+    <>
+      <div className="w-full flex flex-col items-center justify-center bg-white shadow-lg rounded-lg p-8">
+        <div className="bg-white w-[500px]">
+          <h1 className="text-3xl font-bold text-primary-color my-40 text-center">{user.nickname}님의 프로필</h1>
           <div>
-            <label>닉네임</label>
-            <input value={userData.nickname} onChange={handleNicknameChange} />
+            <div>아이디</div>
+            <div>{user.userId}</div>
           </div>
-          <button>프로필 업데이트</button>
-        </form>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label className="mr-30">닉네임</label>
+              <input className="bg-red-300 w-100%" value={userData.nickname} onChange={handleNicknameChange} />
+            </div>
+            <button className="w-200 h-[40px] mb-60 bg-sky text-white py-2 rounded hover:bg-blue-600">
+              프로필 업데이트
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import TestResultItem from './TestResultItem';
 import useUserStore from '../zustand/useUserStore';
 
