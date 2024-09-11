@@ -12,6 +12,14 @@ const TestForm = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const unAnswered = answers.some((answer) => answer === null);
+    if (unAnswered) {
+      alert('모든 문제를 선택해주세요.');
+      return;
+    }
+
+    alert('제출이 완료되었습니다.');
+
     onSubmit(answers);
   };
 
