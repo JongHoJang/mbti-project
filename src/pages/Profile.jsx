@@ -12,11 +12,12 @@ const Profile = () => {
   });
 
   useEffect(() => {
-    const API_URL = 'http://localhost:4000/testResults';
+    // const API_URL = 'http://localhost:4000/testResults';
+    const API_SHARE = 'https://valiant-expensive-bite.glitch.me/testResult';
 
     const getTestResults = async () => {
       try {
-        const response = await axios.get(API_URL);
+        const response = await axios.get(API_SHARE);
         const filteredResults = response.data.filter((result) => result.userId === user.userId);
         setFindUser(filteredResults);
       } catch (error) {
