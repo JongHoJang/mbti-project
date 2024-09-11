@@ -50,7 +50,7 @@ const Profile = () => {
   return (
     <>
       <h1 className="text-3xl font-bold text-primary-color my-40 text-center">"{user.nickname}"님의 프로필</h1>
-      <div className="flex flex items-center justify-center">
+      <div className="flex items-center justify-center">
         <div className="w-[600px] bg-white shadow-lg rounded-lg p-8">
           <div>
             <div className="flex flex-col items-center justify-center text-center mb-16">
