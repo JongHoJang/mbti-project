@@ -13,7 +13,7 @@ const Profile = () => {
 
   useEffect(() => {
     // const API_URL = 'http://localhost:4000/testResults';
-    const API_SHARE = 'https://valiant-expensive-bite.glitch.me/testResult';
+    const API_SHARE = 'https://valiant-expensive-bite.glitch.me/testResults';
 
     const getTestResults = async () => {
       try {
